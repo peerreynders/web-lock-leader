@@ -1,0 +1,36 @@
+{
+  "name": "web-lock-leader",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "client:build": "./node_modules/.bin/rollup -c ./rollup.config.mjs",
+		"client:es": "eslint -c .eslintrc.cjs ./src",
+		"client:types": "./node_modules/.bin/tsc --noEmit -p ./tsconfig.json",
+    "format": "prettier --write ./src",
+    "serve": "node ./index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peerreynders/web-lock-leader"
+  },
+  "keywords": [],
+  "author": "Peer Reynders",
+  "license": "MIT",
+  "homepage": "https://github.com/peerreynders/web-lock-leader#readme",
+  "bugs": {
+    "url": "https://github.com/peerreynders/web-lock-leader/issues"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "rollup": "^4.1.4",
+    "serve-handler": "^6.1.5",
+    "typescript": "^5.2.2"
+  }
+}
