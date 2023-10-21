@@ -4,6 +4,33 @@ Nano demo of using the Web Locks API for leader election
 
 Open multiple copies of the index page in the browser but only one can be the “leader”. 
 
+```shell
+web-lock-leader$ npm i
+
+added 180 packages, and audited 181 packages in 13s
+
+41 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+web-lock-leader$ npm run client:build
+ 
+> web-lock-leader@0.0.0 client:build
+> ./node_modules/.bin/rollup -c ./rollup.config.mjs
+
+
+./src/entry.js → ./public/main.js...
+created ./public/main.js in 207ms
+
+web-lock-leader$ npm run serve
+
+> web-lock-leader@0.0.0 serve
+> node ./index.mjs
+
+Running at http://localhost:3000
+```
+
 ## Motivation
 
 SPA's can “Just Create One” ([JCO](http://butunclebob.com/ArticleS.UncleBob.SingletonVsJustCreateOne)) of anything because client side routing never reloads the page. 
@@ -20,7 +47,7 @@ The Worker backs up its state consistently so that when invariably the “leader
 ## References
 - [Leader election in browser tabs, the easy way](https://greenvitriol.com/posts/browser-leader)
 - [BroadcastChannel—Using the Leader Election](https://github.com/pubkey/broadcast-channel#using-the-leaderelection)
-- [MDN: Web Locks API—Advanced use](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API#advanced_use)i
+- [MDN: Web Locks API—Advanced use](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API#advanced_use)
 - [MDN: `visibilitychange` event](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event)
 - [Can I Use: Lock API](https://caniuse.com/mdn-api_lock)
 
